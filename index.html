@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XSS Challenge</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 60,
+        "density": { "enable": true, "value_area": 800 }
+      },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.5,
+        "random": false
+      },
+      "size": {
+        "value": 3,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      },
+      "modes": {
+        "repulse": { "distance": 100 },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+<body>
+
+  <div id="wrapper-div">
+    <h1>XSS Challenge</h1>
+
+    <div id="alert-box">
+      <label class="input" for="input">Input XSS Code:</label><br><br>
+      <input type="text" id="input" class="input"><br><br>
+
+      <div id="confirm">
+        <button id="confirm-button">OK</button>
+      </div>
+    </div>
+    <br>
+
+    <div id="radioButtons">
+
+      <label for="chal-2">1</label>
+<input type="radio" name="challenge" id="chal-2">
+<label for="chal-3">2</label>
+<input type="radio" name="challenge" id="chal-3">
+
+    </div>
+
+
+    <div id="challenge-display">
+      <h4 id="rules"></h4>
+      <p id="ruleLine"></p>
+      <p id="hint" style="font-style: italic; margin-top: 10px; color: #444;"></p>
+
+
+      <div id="code-container" style="display: none;">
+        <h4>Output Code:</h4>
+        <code id="code"></code>
+      </div>
+
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
